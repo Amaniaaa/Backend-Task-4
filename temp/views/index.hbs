@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <!-- Include the header partial -->
+    {{> header}}
+
+    <!-- Background Container with Banner -->
+    <div class="background-container">
+        <div class="banner">
+            <p id="home-banner">Welcome to our weather page. Please enter the country to find weather:</p>
+        </div>
+
+        <!-- Weather Results Section -->
+        <div id="weather-results">
+            <h2>Weather Results:</h2>
+            <p id="location"></p>
+            <p id="forecast"></p>
+            <p id="longitude"></p>
+            <p id="latitude"></p>
+            <p id="error"></p>
+        </div>
+
+        <div class="images-container">
+            <div class="image-row">
+                <img src="{{cloudyimg}}" alt="Cloudy Weather" class="weather-img">
+                <img src="{{rainyimg}}" alt="Rainy Weather" class="weather-img">
+                <img src="{{snowyimg}}" alt="Snowy Weather" class="weather-img">
+            </div>
+            <div class="image-row">
+                <img src="{{stormyimg}}" alt="Stormy Weather" class="weather-img">
+                <img src="{{sunnyimg}}" alt="Sunny Weather" class="weather-img">
+                <img src="{{partlycloudyimg}}" alt="Partly Cloudy Weather" class="weather-img">
+            </div>
+        </div>
+    </div>
+    <script defer src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+body {
+    background-color: navy;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Ensure a consistent font */
+}
+
+/* Header styles */
+.header1 {
+    background-color: aliceblue;
+    width: 100%;
+    height: 60px; /* Adjust height as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Simplified padding */
+    box-sizing: border-box;
+    font-size: 18px;
+    z-index: 1000; /* Ensure header is above other content */
+    border-bottom: 1px solid #ddd; /* Optional: add a subtle border at the bottom */
+}
+
+/* Banner and Images Container */
+.background-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Ensure a maximum width for larger screens */
+    margin: 0 auto; /* Center container horizontally */
+    height: calc(100vh - 60px); /* Adjust height to fit the viewport minus the header */
+    position: relative;
+    background-color: #f0f0f0; /* Light background color for contrast */
+    padding-top: 60px; /* Space for fixed header */
+    box-sizing: border-box; /* Include padding in height calculation */
+    overflow: auto; /* Allow scrolling if necessary */
+}
+
+.images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    margin: 10px 0; /* Space between rows */
+    width: 100%;
+}
+
+.weather-img {
+    width: 30%; /* Default width for larger screens */
+    max-width: 150px; /* Limit maximum width for images */
+    margin: 5px; /* Space between images */
+    border-radius: 10px; /* Optional: rounded corners for images */
+    box-sizing: border-box; /* Include padding/margins in width calculation */
+}
+
+/* Weather Search Section */
+.weather-search {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Full width container */
+    max-width: 600px; /* Limit width for larger screens */
+    margin: 20px auto; /* Center horizontally with some vertical margin */
+    box-sizing: border-box;
+}
+
+.weather-search button {
+    margin-left: 10px;
+    border: 0;
+    background-color: aquamarine;
+    padding: 10px 20px; /* Add padding for a better button appearance */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Consistent font size */
+}
+
+/* Banner Styles */
+.banner {
+    width: 80%;
+    text-align: center;
+    margin-top: 20px; /* Adjusted for better spacing */
+}
+
+#home-banner {
+    background-color: bisque;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px; /* Adjust font size as needed */
+}
+
+/* Additional styles for links */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .weather-img {
+        width: 30%; /* Adjust for medium screens, keeping three images per row */
+        margin: 5px; /* Adjust margin for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-img {
+        width: 45%; /* Adjust for smaller screens */
+        margin: 5px; /* Less margin for smaller screens */
+    }
+    
+    #home-banner {
+        font-size: 18px; /* Adjust font size for smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .images-container {
+        margin-top: 20px; /* Add margin if needed to separate from weather results */
+    }
+    
+    .image-row {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+    
+    .weather-img {
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .weather-search {
+        flex-direction: column;
+        align-items: stretch; /* Stretch button to full width */
+        width: 90%; /* More width for small screens */
+        margin: 20px auto; /* Center horizontally */
+    }
+
+    .weather-search button {
+        width: 100%; /* Full width button on small screens */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 10px; /* Add top margin for spacing */
+    }
+}
+/* Weather Results Section */
+/* Styling for weather results */
+#weather-results {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: none; /* Initially hidden */
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    #weather-results {
+        top: 50px;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #weather-results {
+        top: 20px;
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+/* Weather Results Heading */
+#weather-results h2 {
+    color: #333; /* Dark text color for readability */
+    font-size: 24px; /* Larger font size for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    text-align:center;
+}
+
+/* Weather Results Paragraphs */
+#weather-results p {
+    color: #555; /* Slightly lighter text color for paragraphs */
+    font-size: 18px; /* Font size for better readability */
+    margin: 10px 0; /* Vertical spacing between paragraphs */
+    text-align: center;
+}
+
+/* Responsive adjustments for weather results */
+@media (max-width: 768px) {
+    #weather-results {
+        width: 90%; /* More width on smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    #weather-results h2 {
+        font-size: 20px; /* Adjust font size for heading */
+    }
+
+    #weather-results p {
+        font-size: 16px; /* Adjust font size for paragraphs */
+    }
+    /* Basic styling for the weather results section */
+#weather-results {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position:absolute;
+    z-index:1;
+}
+
+#error {
+    color: red;
+}
+
+#location,
+#forecast {
+    font-size: 16px;
+}
+
+}
+
